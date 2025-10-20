@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- META BÁSICO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B&LSuperTiCF • Suporte de TI + Loja</title>
+  <meta name="description" content="Suporte de TI profissional para empresas e residências. Help desk, formatação, backup, redes, segurança, além de uma mini loja de periféricos e relógios." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  <link rel="icon" type="image/png" href="imagens/favicon.png">
+
+  
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230ea5e9'/><path d='M25 65l13-30 14 30 13-30' stroke='white' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+  
+  </style>
+
+  <!-- SCHEMA ORG -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "B&LSuperTiCF - Suporte de TI",
+    "url": "https://exemplo.bl-solutions.local",
+    "image": "https://exemplo.bl-solutions.local/logo.png",
+    "telephone": "+55 11 97726-8599",
+    "areaServed": "Brasil",
+    "address": {"@type":"PostalAddress","addressCountry":"BR"},
+    "sameAs": [
+      "https://wa.me/5511955519303"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand-badge">BL</span>
+        <span>B&LSuperTiCF</span>
+      </a>
+
+      <!-----Menu Mobile -->
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #0b0f19;
+      color: #fff;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #0b0f19;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #1f283d;
+    }
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background-color: #00bfff;
+      padding: 4px;
+    }
+
+    /* LINKS DO MENU */
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .menu a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .menu a:hover {
+      color: #00bfff;
+    }
+
+    /* BOTÕES LATERAIS */
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-whatsapp {
+      background: #0b0f19;
+      color: #00ff73;
+      border: 1px solid #1f283d;
+      border-radius: 10px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-buy {
+      background: #00bfff;
+      color: #0b0f19;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ===== MENU MOBILE ===== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      background: #fff;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    /* MOBILE ATIVO */
+    @media (max-width: 880px) {
+      .menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #111827;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        display: none;
+      }
+
+      .menu.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .actions {
+        display: none;
+      }
+    }
+
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+
+    <!-- MENU TOGGLE (HAMBURGUER) -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- LINKS -->
+    <div class="menu" id="menu">
+      <a href="index.html">Início</a>
+      <a href="politica.html">Política de Privacidade</a>
+      <a href="loja.html">Loja</a>
+      <a href="#contato">Contato</a>
+    
+    </div>
+
+    <!-- BOTÕES -->
+    <!-- versão móvel (será clonada dinamicamente) -->
+        <ul class="nav-links-mobile" id="navMobile" style="display:none"></ul>
+      </nav>
+
+      <div class="cta">
+        <a class="btn ghost" href="https://wa.me/5511955519303" target="_blank" rel="noopener"> <i class="fab fa-whatsapp" style="color:#25D366;margin-right:8px"></i> WhatsApp</a>
+        <button class="btn primary" id="openCart">🛒 Comprar (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+
+<!--Formulario do menu -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário no Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    #formContainer {
+      display: none; /* Começa escondido */
+      padding: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+  </style>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <span class="chip">⏱️ Atendimento rápido • 🔒 Segurança • 🧠 Profissional</span>
+        <h1 class="title">Suporte de TI completo para a sua empresa e residência</h1>
+        <p class="subtitle">Help desk, formatação, upgrade, backup, redes, segurança, servidores, nuvem e consultoria. Conte com um parceiro técnico para manter tudo funcionando — e ainda aproveite nossa mini loja com <b>periféricos</b> e <b>relógios</b>.</p>
+        <div style="display:flex; gap:10px; margin-top:16px">
+          <a class="btn primary" href="#servicos">Conheça os serviços</a>
+          <a class="btn" href="#loja">Ir para a loja</a>
+        </div>
+        <div class="grid-stats">
+          <div class="stat"><div>⏳ Tempo médio de resposta</div><b>&lt; 1h</b></div>
+          <div class="stat"><div>💼 Chamados resolvidos</div><b>1.200+</b></div>
+          <div class="stat"><div>⭐ Satisfação</div><b>4,9/5</b></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 600 420" width="100%" height="100%" role="img" aria-label="Ilustração suporte de TI">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+          <rect x="24" y="40" width="552" height="340" rx="18" fill="#0f172a" stroke="#1f2937"/>
+          <rect x="60" y="76" width="480" height="80" rx="12" fill="#0b1220" stroke="#1f2937"/>
+          <rect x="60" y="176" width="220" height="168" rx="12" fill="#0b1220" stroke="#1f2937"/>
+          <rect x="320" y="176" width="220" height="168" rx="12" fill="#0b1220" stroke="#1f2937"/>
+          <circle cx="120" cy="116" r="18" fill="url(#g1)"/>
+          <rect x="156" y="100" width="260" height="32" rx="8" fill="#111827"/>
+          <text x="180" y="121" font-size="16" fill="#cbd5e1">Monitoramento & Backup</text>
+          <text x="88" y="210" font-size="28" fill="#e5e7eb">Atendimento</text>
+          <text x="344" y="210" font-size="28" fill="#e5e7eb">Loja</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+   <section id="quem-somos" class="who-are-we">
+  <div class="container">
+    <h1>Quem Somos</h1>
+    <p>Somos a <strong>B&LSuperTiCF</strong>, uma empresa especializada em <strong>soluções de tecnologia e suporte de TI</strong>. Atendemos empresas e residências oferecendo manutenção preventiva e corretiva, suporte remoto e presencial, recuperação de dados e uma seleção completa de periféricos de alta qualidade.</p>
+    <p>Nosso compromisso é garantir que a tecnologia funcione a favor do seu negócio, proporcionando segurança, eficiência e inovação. Trabalhamos com profissionais qualificados, atendimento ágil e soluções personalizadas para cada cliente.</p>
+    <p>Acreditamos que a tecnologia transforma negócios e vidas e, por isso, investimos continuamente em qualidade, inovação e atendimento humano para entregar sempre os melhores resultados.</p>
+  </div>
+
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="container">
+      <h2 class="title">Serviços de TI</h2>
+      <p class="subtitle">Planos sob medida e contratação avulsa. Atendemos presencialmente (região metropolitana) e remotamente para todo Brasil.</p>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <h3 id="suporte">Help Desk & Suporte Remoto</h3>
+          <p>Resolução de problemas de software, sistemas contábeis, Office 365, drivers e apoio ao usuário. SLA com resposta ágil.
+            Instalar e configurar computadores e impressoras, resolver falhas em redes e sistemas ,fazer manutenção em equipamentos,ajudar usuários com problemas técnicos,proteger dados e realizar backups.</p>
+          <ul>
+            <li>Atendimento via WhatsApp e e-mail</li>
+            <li>Agendamento remoto imediato</li>
+          </ul>
+        </article>
+        <article class="card" role="listitem">
+          <h3 id="infra">Infraestrutura & Redes</h3>
+          <p>Projeto e manutenção de redes cabeadas e Wi‑Fi, firewall, VPN site‑to‑site, switches gerenciáveis e balanceamento.</p>
+          <ul>
+            <li>Segurança perimetral e endpoints</li>
+            <li>Monitoramento proativo</li>
+          </ul>
+        </article>
+        <article class="card" role="listitem">
+          <h3 id="backup">Backup & Nuvem</h3>
+          <p>Estratégia 3‑2‑1, backup local e em nuvem, Microsoft 365, Google Workspace, restauração e testes de DR.</p>
+          <ul>
+            <li>Políticas de retenção</li>
+            <li>Relatórios mensais</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- ESTILO DO BOTÃO -->
+<style>
+  .whatsapp-btn {
+    display: inline-block;
+    margin-top: 8px;
+    background-color: #25d366;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+
+ 
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <h2 class="title">Sobre B&LSuperTiCF</h2>
+      <p class="subtitle">Atuamos com foco em confiabilidade, segurança e atendimento humano. Nosso objetivo é simplificar a tecnologia e garantir continuidade para o seu negócio.</p>
+      <div class="cards">
+        <article class="card"><h3>Missão</h3><p>Manter pessoas e empresas produtivas com tecnologia que funciona sempre.</p></article>
+        <article class="card"><h3>Valores</h3><p>Transparência, compromisso, segurança e evolução contínua.</p></article>
+        <article class="card"><h3>Diferenciais</h3><p>Resposta rápida, documentação, relatórios claros e suporte multi‑canal.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="title">Perguntas frequentes</h2>
+      <div class="cards">
+        <article class="card"><h3>Como funciona o pagamento?</h3><p>Após finalizar o pedido no carrinho, entraremos em contato para pagamento via Pix ou link de cartão.</p></article>
+        <article class="card"><h3>Qual o prazo de entrega?</h3><p>Envio em até 2 dias úteis. Para região metropolitana, oferecemos entrega própria sob consulta.</p></article>
+        <article class="card"><h3>Emitimos nota fiscal?</h3><p>Sim, para todos os serviços e produtos.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!---Depoimentos -->
+
+  <section id="depoimentos">
+  <div class="container">
+    <h2 class="title">O que nossos clientes dizem</h2>
+    <div class="cards">
+      <article class="card">
+        <p>“A BL Solutions resolveu nosso backup em tempo recorde. Atendimento impecável.”</p>
+        <strong>– João, Contabilidade ABC</strong>
+      </article>
+      <article class="card">
+        <p>“Equipe muito profissional e suporte rápido. Recomendo!”</p>
+        <strong>– Maria, Loja XYZ</strong>
+      </article>
+    </div>
+  </div>
+</section>
+    </div>
+  </footer>
+
+  <section class="feedback-section">
+  <h2> Deixe seu feedback</h2>
+  <p>Sua opinião é essencial para continuarmos melhorando nossos serviços. Conte-nos o que achou!</p>
+  <img src="imagens/the-form.gif" alt="Animação de exemplo" width="150">
+  <a href="https://forms.gle/BH1uirPva1ioBdS57" class="btn-feedback">Contato!</a>
+</section>
+
+<!-- SEÇÃO REDES SOCIAIS -->
+<section id="redes-sociais" class="social-section">
+  <h2>Siga a B&L SuperTiCF</h2>
+  <p>Acompanhe nossas novidades, promoções e lançamentos exclusivos!</p>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://wa.me/5511955519303" target="_blank" class="social-icon whatsapp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.tiktok.com/" target="_blank" class="social-icon tiktok">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok">
+    </a>
+  </div>
+</section>
+
+<style>
+.social-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #001f52, #00367a);
+  color: #fff;
+}
+[data-theme="light"] .social-section {
+  background: #f0f5ff;
+  color: #1a1a1a;
+}
+.social-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+.social-section p {
+  margin-bottom: 30px;
+  color: var(--muted-dark);
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.social-icon img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+}
+.social-icon:hover img {
+  transform: scale(1.15);
+}
+</style>
+
+
+<style>
+  .feedback-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #bcc4cc;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .feedback-section h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+  }
+  .feedback-section p {
+    color: #475569;
+    margin-bottom: 20px;
+  }
+  .btn-feedback {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-feedback:hover {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    transform: translateY(-2px);
+  }
+</style>
+
+  <!-- FOOTER (dentro do footer que você já tem) -->
+  <div style="width:100%;text-align:center;font-size:0.8rem;color:#9ca3af;margin-top:8px;">
+    Este site é protegido por reCAPTCHA e aplicam-se a <a href="#" style="color:#9ca3af">Política de Privacidade</a> e os <a href="#" style="color:#9ca3af">Termos de Serviço</a>.
+  </div>
+
+<script>
+  /* Script para atualizar ano automaticamente */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Botão voltar ao topo */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 300){
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+  backToTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+
+
+<!-- Modal de tickets -->
+<div class="ticket-modal-backdrop" id="ticketModalBackdrop" aria-hidden="true">
+  <div class="ticket-modal" role="dialog" aria-modal="true" aria-labelledby="ticketTitle">
+    <header>
+      <strong id="ticketTitle">Chamado</strong>
+      <button id="ticketModalClose" aria-label="Fechar modal" style="background:transparent;border:0;color:#fff;font-size:18px;cursor:pointer">✕</button>
+    </header>
+
+    <div style="position:relative; flex:1;">
+      <div class="ticket-loader" id="ticketLoader" aria-hidden="false" style="display:flex">
+        <div class="spinner" role="status" aria-label="Carregando"></div>
+      </div>
+
+      <iframe id="ticketIframe" src="about:blank" title="Formulário de chamado" loading="lazy" sandbox="allow-forms allow-scripts allow-same-origin"></iframe>
+    </div>
+
+    <div class="actions">
+      <a id="ticketOpenNew" href="#" target="_blank" rel="noopener" style="text-decoration:none; color:#334c7b; background:#ffface; padding:8px 10px; border-radius:8px">Abrir em nova aba</a>
+      <button id="ticketCloseBtn" class="btn" style="padding:8px 12px">Fechar</button>
+    </div>
+  </div>
+</div>
+<style>
+ 
+  
+/* Painel lateral (hamburger) */
+.hamburger-panel {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100vh;
+  background: #0f172a;
+  color: #e6eef8;
+  z-index: 10050;
+  box-shadow: 6px 0 30px rgba(2,6,23,.6);
+  transition: left .28s ease;
+  display:flex;
+  flex-direction:column;
+  padding:18px;
+  gap:12px;
+}
+.hamburger-panel.open { left: 0; }
+
+/* Backdrop atrás do painel */
+.hamburger-backdrop {
+  position: fixed;
+  inset:0;
+  background: rgba(0,0,0,.45);
+  z-index: 10040;
+  display:none;
+}
+.hamburger-backdrop.show { display:block; }
+
+/* Header do painel */
+.hamburger-panel .hp-head { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.hamburger-panel h3 { margin:0; font-size:1.05rem; color:#fff; }
+
+/* Itens */
+.hamburger-actions { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+.hamburger-actions button {
+  background:#0ea5e9; color:#042028; border:0; padding:10px 12px; border-radius:8px; cursor:pointer; text-align:left; font-weight:600;
+}
+.hamburger-actions button.secondary { background:#ffface; color:#111; font-weight:600; }
+
+.hamburger-actions a {
+  color:#cfeffd; text-decoration:none; font-size:0.95rem;
+}
+
+/* Mini footer no painel */
+.hamburger-panel .hp-footer { margin-top:auto; font-size:0.85rem; color:#9fb7c9; }
+
+/* Modal de ticket (overlay) */
+.ticket-modal-backdrop {
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+  background: rgba(0,0,0,.65); z-index:11000; padding:18px;
+}
+.ticket-modal-backdrop.show { display:flex; }
+.ticket-modal {
+  width:100%; max-width:1100px; height:82vh; background:#fff; border-radius:10px; overflow:hidden; display:flex; flex-direction:column;
+  box-shadow:0 10px 30px rgba(2,6,23,.6);
+}
+.ticket-modal header { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#334c7b; color:#fff; }
+.ticket-modal iframe { flex:1 1 auto; width:100%; border:0; min-height:0; background:#fff; }
+.ticket-modal .actions { padding:10px 14px; background:#f6f9fb; display:flex; gap:8px; justify-content:flex-end; align-items:center; }
+
+/* loader simples sobre iframe */
+.ticket-loader { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+.ticket-loader .spinner { width:46px; height:46px; border:5px solid rgba(0,0,0,.08); border-top-color:#334c7b; border-radius:50%; animation: spin .9s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* ajuste mobile: menu-toggle visível e painel ocupa quase toda tela */
+@media (max-width:480px) {
+  .hamburger-panel { width:92vw; }
+}
+</style>
+<script>
+/* Toggle do painel hambúrguer - a sua div já chama toggleMenu() no onclick */
+function toggleMenu(){
+  const panel = document.getElementById('hamburgerPanel');
+  const backdrop = document.getElementById('hamburgerBackdrop');
+
+  const isOpen = panel.classList.contains('open');
+  if(isOpen){
+    panel.classList.remove('open');
+    backdrop.classList.remove('show');
+    backdrop.setAttribute('aria-hidden', 'true');
+  } else {
+    panel.classList.add('open');
+    backdrop.classList.add('show');
+    backdrop.setAttribute('aria-hidden', 'false');
+  }
+}
+
+/* Fechar via backdrop ou botão */
+document.getElementById('hamburgerBackdrop').addEventListener('click', toggleMenu);
+document.getElementById('hpCloseBtn').addEventListener('click', toggleMenu);
+
+/* Abrir modal de ticket a partir dos botões no painel */
+const openBtns = document.querySelectorAll('.hamburger-actions .open-ticket');
+const ticketBackdrop = document.getElementById('ticketModalBackdrop');
+const ticketIframe = document.getElementById('ticketIframe');
+const ticketTitle = document.getElementById('ticketTitle');
+const ticketLoader = document.getElementById('ticketLoader');
+const ticketOpenNew = document.getElementById('ticketOpenNew');
+
+openBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const url = btn.dataset.url;
+    const title = btn.dataset.title || 'Chamado';
+    // fecha o painel hambúrguer
+    const panel = document.getElementById('hamburgerPanel');
+    const backdrop = document.getElementById('hamburgerBackdrop');
+    panel.classList.remove('open');
+    backdrop.classList.remove('show');
+
+    // abre modal
+    ticketTitle.textContent = title;
+    ticketOpenNew.href = url;
+    ticketLoader.style.display = 'flex';
+    ticketIframe.src = url;
+    ticketBackdrop.classList.add('show');
+    ticketBackdrop.setAttribute('aria-hidden','false');
+
+    // foco e acessibilidade
+    setTimeout(()=> ticketIframe.focus(), 250);
+  });
+});
+
+/* Fechar modal */
+function closeTicketModal(){
+  ticketBackdrop.classList.remove('show');
+  ticketBackdrop.setAttribute('aria-hidden','true');
+  ticketIframe.src = 'about:blank';
+  ticketLoader.style.display = 'none';
+}
+document.getElementById('ticketModalClose').addEventListener('click', closeTicketModal);
+document.getElementById('ticketCloseBtn').addEventListener('click', closeTicketModal);
+ticketBackdrop.addEventListener('click', (ev)=> { if(ev.target === ticketBackdrop) closeTicketModal(); });
+
+/* Quando iframe carrega, escondemos o loader */
+ticketIframe.addEventListener('load', () => {
+  // se o iframe for blocked, onload pode ou não disparar dependendo; ainda assim escondemos loader.
+  ticketLoader.style.display = 'none';
+});
+
+/* Fechar com ESC */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    // fecha painel se aberto
+    const panel = document.getElementById('hamburgerPanel');
+    if(panel.classList.contains('open')) toggleMenu();
+    if(ticketBackdrop.classList.contains('show')) closeTicketModal();
+  }
+});
+
+/* Opcional: atualiza link de fallback caso o iframe seja bloqueado */
+ticketOpenNew.addEventListener('click', () => {
+  // abre em nova aba; nada extra necessário
+});
+
+  const toggleButton = document.getElementById('themeToggle');
+  const body = document.body;
+
+  // Carregar preferência anterior
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    toggleButton.textContent = '🌙';
+  }
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    // Atualiza o ícone
+    if (body.classList.contains('dark-mode')) {
+      toggleButton.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      toggleButton.textContent = '🌞';
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
+
+</script>
+</html>
+

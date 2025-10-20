@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B&L SuperTiCF • Loja de Periféricos de TI</title>
+  <meta name="description" content="Loja profissional de periféricos de TI com entrega expressa e suporte especializado.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:#007bff;
+      --secondary:#00c853;
+      --accent:#ffb300;
+      --bg-dark:#0a0f1f;
+      --bg-light:#ffffff;
+      --card-dark:#151e33;
+      --card-light:#f9fafb;
+      --text-dark:#ffffff;
+      --text-light:#1a1a1a;
+      --muted-dark:#94a3b8;
+      --muted-light:#6b7280;
+      --radius:16px;
+      --transition:0.3s ease-in-out;
+    }
+
+    * {box-sizing:border-box;}
+    body {
+      font-family:'Poppins',sans-serif;
+      margin:0;
+      padding:0;
+      background:var(--bg-dark);
+      color:var(--text-dark);
+      transition:background var(--transition),color var(--transition);
+      scroll-behavior:smooth;
+    }
+    [data-theme="light"]{background:var(--bg-light);color:var(--text-light);}
+    a{text-decoration:none;color:inherit;}
+
+    /* Header */
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 60px;
+      background:rgba(0,0,0,0.6);
+      backdrop-filter:blur(12px);
+      position:sticky;top:0;z-index:10;
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+    }
+    header h1{font-size:1.8rem;color:var(--primary);font-weight:600;}
+    nav a{margin:0 15px;font-weight:500;transition:color var(--transition);}
+    nav a:hover{color:var(--accent);}
+
+    /* Botão de tema */
+    #themeToggle {
+      background:none;border:2px solid var(--primary);
+      color:var(--primary);border-radius:50%;width:42px;height:42px;
+      cursor:pointer;font-size:1.3rem;transition:all var(--transition);
+      display:flex;align-items:center;justify-content:center;
+    }
+    #themeToggle:hover{background:var(--primary);color:#fff;}
+
+    /* Hero */
+    .hero {
+      text-align:center;
+      padding:120px 20px;
+      background:linear-gradient(135deg,#00235e,#004e92);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    [data-theme="light"] .hero {
+      background:linear-gradient(135deg,#cce0ff,#eaf2ff);
+      color:#1a1a1a;
+    }
+    .hero::after{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(circle at 50% 50%,rgba(255,255,255,0.1),transparent 70%);
+      animation:pulse 5s infinite alternate;
+    }
+    @keyframes pulse{from{opacity:0.5;}to{opacity:1;}}
+    .hero h2{font-size:2.8rem;margin-bottom:15px;font-weight:600;position:relative;z-index:1;}
+    .hero p{font-size:1.15rem;margin-bottom:30px;color:#cbd5e1;position:relative;z-index:1;}
+    .hero button {
+      background:var(--secondary);
+      border:none;
+      padding:14px 36px;
+      border-radius:var(--radius);
+      color:#fff;
+      font-size:1.05rem;
+      cursor:pointer;
+      transition:transform var(--transition),box-shadow var(--transition);
+      position:relative;z-index:1;
+    }
+    .hero button:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(0,0,0,0.3);}
+
+    /* Seção diferenciais */
+    .diferenciais {
+      max-width:1200px;
+      margin:90px auto;
+      padding:0 20px;
+      text-align:center;
+    }
+    .diferenciais h2{font-size:2rem;margin-bottom:40px;color:var(--accent);}
+    .diferenciais-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+    .diferencial {
+      background:var(--card-dark);
+      padding:35px 25px;
+      border-radius:var(--radius);
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+      transition:transform var(--transition),box-shadow var(--transition);
+    }
+    [data-theme="light"] .diferencial{background:var(--card-light);}
+    .diferencial:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+    .diferencial img{width:64px;margin-bottom:18px;}
+    .diferencial h3{margin:10px 0;color:var(--secondary);}
+    .diferencial p{color:var(--muted-dark);}
+    [data-theme="light"] .diferencial p{color:var(--muted-light);}
+
+    /* Produtos */
+    .catalog {
+      max-width:1200px;
+      margin:90px auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+    .product-card {
+      background:var(--card-dark);
+      border-radius:var(--radius);
+      box-shadow:0 8px 25px rgba(0,0,0,0.25);
+      text-align:center;
+      overflow:hidden;
+      transition:transform var(--transition),box-shadow var(--transition);
+    }
+    [data-theme="light"] .product-card{background:var(--card-light);}
+    .product-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 10px 25px rgba(0,0,0,0.25);}
+    .product-card img{width:100%;height:220px;object-fit:cover;}
+    .product-card h3{margin:15px;font-size:1.2rem;}
+    .product-card p{color:var(--muted-dark);margin:0 15px 10px;}
+    .price{color:var(--secondary);font-weight:600;margin-bottom:10px;display:block;}
+    .whatsapp-btn{
+      display:inline-block;margin-bottom:20px;padding:10px 22px;
+      background:#25d366;color:#fff;border-radius:var(--radius);
+      transition:transform var(--transition),box-shadow var(--transition);
+      font-weight:500;
+    }
+    .whatsapp-btn:hover{transform:scale(1.05);box-shadow:0 6px 12px rgba(0,0,0,0.2);}
+
+    /* Entrega */
+    .entrega {
+      background:linear-gradient(135deg,#002c61,#004c97);
+      padding:90px 20px;
+      text-align:center;
+      color:#fff;
+    }
+    [data-theme="light"] .entrega{background:#f0f5ff;color:#1a1a1a;}
+    .entrega h2{font-size:2.2rem;margin-bottom:20px;}
+    .entrega p{max-width:800px;margin:0 auto 40px;}
+    .entrega-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .entrega-item {
+      background:rgba(255,255,255,0.1);
+      padding:20px;
+      border-radius:var(--radius);
+      backdrop-filter:blur(8px);
+      transition:transform var(--transition);
+    }
+    .entrega-item:hover{transform:translateY(-5px);}
+    [data-theme="light"] .entrega-item{background:#ffffffc9;}
+    .entrega-item img{width:100%;border-radius:var(--radius);margin-bottom:10px;}
+    .entrega-item h3{color:var(--accent);}
+    .entrega-item p{font-size:0.95rem;}
+
+    /* Footer */
+    footer {
+      text-align:center;
+      padding:40px 20px;
+      background:#0b1222;
+      color:var(--muted-dark);
+      font-size:0.9rem;
+    }
+    [data-theme="light"] footer{background:#f0f5ff;color:var(--muted-light);}
+    footer a{color:var(--primary);font-weight:500;}
+
+    /* Botão WhatsApp flutuante */
+    .whatsapp {
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:#25d366;
+      color:#fff;
+      border-radius:50%;
+      width:60px;
+      height:60px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:28px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+      transition:transform var(--transition);
+      z-index:99;
+    }
+    .whatsapp:hover{transform:scale(1.1);}
+  </style>
+</head>
+
+<body data-theme="dark">
+  <header>
+    <h1>B&L SuperTiCF</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#entrega">Entrega</a>
+      <a href="#contato">Contato</a>
+      <a href="Politica.html">politica </a>
+    </nav>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <section class="hero">
+    <h2>🚀 Tecnologia e Entrega Imediata</h2>
+    <p>Os melhores periféricos de TI com qualidade e agilidade no atendimento.</p>
+    <button onclick="window.location.href='#produtos'">Ver Produtos</button>
+  </section>
+
+  <section class="diferenciais">
+    <h2>Por que escolher a B&L SuperTiCF?</h2>
+    <div class="diferenciais-grid">
+      <div class="diferencial">
+        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" alt="">
+        <h3>Entrega Rápida</h3>
+        <p>Receba seus produtos em até 24h com envio prioritário.</p>
+      </div>
+      <div class="diferencial">
+        <img src="https://cdn-icons-png.flaticon.com/512/3050/3050141.png" alt="">
+        <h3>Qualidade Garantida</h3>
+        <p>Trabalhamos apenas com marcas originais e produtos testados.</p>
+      </div>
+      <div class="diferencial">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">
+        <h3>Atendimento Personalizado</h3>
+        <p>Suporte técnico especializado para tirar suas dúvidas.</p>
+      </div>
+    </div>
+  </section>
+
+    <section id="produtos" class="catalog">
+  <!-- Teclado -->
+  <div class="product-card">
+    <img src="imagens/OIP.webp" alt="Teclado Gamer">
+    <h3>Teclado Mecânico RGB</h3>
+    <p>Performance e iluminação incrível.</p>
+    <span class="price">R$ 300,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Mouse -->
+  <div class="product-card">
+    <img src="img2/baixados.jpeg" alt="Mouse Gamer RGB">
+    <h3>Mouse Gamer RGB</h3>
+    <p>Alta precisão com 7200 DPI.</p>
+    <span class="price">R$ 120,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Headset -->
+  <div class="product-card">
+    <img src="imagens/fone de ouvido.webp" alt="Headset Gamer">
+    <h3>Headset Gamer Pro</h3>
+    <p>Som cristalino e microfone ajustável.</p>
+    <span class="price">R$ 220,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Smartwatch -->
+  <div class="product-card">
+    <img src="imagens/relogio.jpg" alt="Smartwatch">
+    <h3>Smartwatch Premium</h3>
+    <p>Monitoramento de saúde e fitness.</p>
+    <span class="price">R$ 90,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Caixa de Som -->
+  <div class="product-card">
+    <img src="img2/caixa de som.jpeg" alt="Caixa de Som Bluetooth">
+    <h3>Caixa de Som Bluetooth X500</h3>
+    <p>Som potente e bateria duradoura.</p>
+    <span class="price">R$ 150,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Webcam -->
+  <div class="product-card">
+    <img src="imagens/webcam.webp" alt="Webcam HD 1080p">
+    <h3>Webcam Full HD 1080p</h3>
+    <p>Qualidade superior para reuniões e streaming.</p>
+    <span class="price">R$ 180,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- HD Externo -->
+  <div class="product-card">
+    <img src="imagens/hd externo.webp" alt="HD Externo">
+    <h3>HD Externo 1TB USB 3.0</h3>
+    <p>Velocidade e segurança para seus arquivos.</p>
+    <span class="price">R$ 320,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- SSD -->
+  <div class="product-card">
+    <img src="imagens/ssd  nvme.webp" alt="SSD NVMe 500GB">
+    <h3>SSD NVMe 500GB</h3>
+    <p>Alta velocidade para desempenho máximo.</p>
+    <span class="price">R$ 100,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Câmera de Segurança -->
+  <div class="product-card">
+    <img src="img2/camera de segurança.jpeg" alt="Câmera de Segurança">
+    <h3>Câmera de Segurança Wi-Fi</h3>
+    <p>Monitoramento remoto 24h em Full HD.</p>
+    <span class="price">R$ 150,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Memória RAM -->
+  <div class="product-card">
+    <img src="imagens/memoria.webp" alt="Memória RAM 16GB">
+    <h3>Memória RAM 16GB DDR4</h3>
+    <p>Mais velocidade para jogos e tarefas pesadas.</p>
+    <span class="price">R$ 50,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Capinha de Celular -->
+  <div class="product-card">
+    <img src="img2/capinha.jpeg" alt="Capinha de Celular">
+    <h3>Capinha Protetora Silicone</h3>
+    <p>Proteção e estilo para seu smartphone.</p>
+    <span class="price">R$ 45,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+
+  <!-- Fone Bluetooth -->
+  <div class="product-card">
+    <img src="img2/blutooh.jpeg" alt="Fone Bluetooth">
+    <h3>Fone Bluetooth TWS</h3>
+    <p>Som nítido e conexão estável.</p>
+    <span class="price">R$ 59,00</span>
+    <a href="https://wa.me/5511955519303" target="_blank" class="whatsapp-btn">📱 Comprar</a>
+  </div>
+</section>
+
+  </section>
+
+  <section id="entrega" class="entrega">
+    <h2>📦 Entrega Rapida e Confiável</h2>
+    <p>Tem pressa? Nossa equipe garante envio em até 24 horas úteis para todo o Brasil com rastreio em tempo real.</p>
+    <div class="entrega-grid">
+      <div class="entrega-item">
+        <img src="img2/expressa 01.jpeg" alt="Entrega expressa">
+        <h3>Entrega Expressa</h3>
+        <p>Envio imediato com parceiros logísticos.</p>
+      </div>
+      <div class="entrega-item">
+        <img src="imagens/rastreamento.webp" alt="Rastreamento">
+        <h3>Rastreamento</h3>
+        <p>Acompanhe seu pedido em tempo real pelo WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <p>📞 Fale conosco no <a href="https://wa.me/11973171638" target="_blank">WhatsApp</a></p>
+    <p>© 2025 B&L SuperTiCF • Todos os direitos reservados</p>
+  </footer>
+
+  <a href="https://wa.me/11955519303" class="whatsapp" target="_blank">💬</a>
+
+  <script>
+    const toggle=document.getElementById('themeToggle');
+    const body=document.body;
+    const savedTheme=localStorage.getItem('theme')||'dark';
+    body.dataset.theme=savedTheme;
+    toggle.textContent=savedTheme==='light'?'🌞':'🌙';
+    toggle.addEventListener('click',()=>{
+      const newTheme=body.dataset.theme==='light'?'dark':'light';
+      body.dataset.theme=newTheme;
+      localStorage.setItem('theme',newTheme);
+      toggle.textContent=newTheme==='light'?'🌞':'🌙';
+    });
+  </script>
+</body>
+</html>
